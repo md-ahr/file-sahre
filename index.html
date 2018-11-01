@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Share Me</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css" media="screen">
+		#forkongithub {
+		    position: absolute;
+		    display: block;
+		    top: 0;
+		    right: 0;
+		    width: 200px;
+		    overflow: hidden;
+		    height: 200px;
+		    z-index: 0;
+		}
+		#forkongithub a {
+			width: 250px;
+		    background: #777;
+		    color: #fff;
+		    text-decoration: none;
+		    font-family: arial,sans-serif;
+		    text-align: center;
+		    font-weight: 700;
+		    padding: 5px 40px;
+		    font-size: 13px;
+		    line-height: 2rem;
+		    position: absolute;
+		    top: 65px;
+			right: -85px;
+			transform: rotate(-315deg);
+			 -webkit-transform: rotate(-315deg);
+			  -ms-transform: rotate(-315deg);
+			  -moz-transform: rotate(-315deg);
+			  -o-transform: rotate(-315deg);
+			box-sizing: content-box;
+		    transition: 0.5s ease;
+		}
+		#forkongithub a:before, #forkongithub a:after {
+		    content: "";
+		    width: 100%;
+		    display: block;
+		    position: absolute;
+		    top: 1px;
+		    right: 0;
+		    height: 1px;
+		    background: #fff;
+		}
+		#forkongithub a:hover {
+			background-color: #444;
+		}
+		.share {
+			margin-top: 140px;
+		}
+		.lead {
+			font-weight: 400;
+		}
+		.font {
+			font-size: 18px;
+		}
+		.file .form-control {
+			height: 2.8em;
+		}
+		.btn-success {
+			background-color: #69d052;
+			border-color: #69d052;
+		}
+	</style>
+</head>
+<body>
+
+	<span id="forkongithub">
+		<a href="https://github.com/cdnjs/cdnjs" target="_blank">RKshare on Github</a>
+	</span>
+
+	<div class="container share">
+		<h1 class="text-center text-uppercase">Upload files in a secured way</h1>
+		<p class="text-center lead pt-3">You can make the file accessible maximum 24 hours</p>
+		<p class="text-center lead">
+			Allowed file size is 5MB and allowed file types are: 
+			<span class="font">'pdf', 'png', 'jpg', 'jpeg', 'gif', 'zip', 'doc', 'docx', 'tar.gz', 'xml'</span>
+		</p>
+		<div class="card p-3 mt-5 w-75 ml-auto mr-auto bg-light">
+			<h3 class="text-center pt-2 pb-4">Upload Your Files</h3>
+			<form action="">
+				<div class="file">
+					<input type="file" class="form-control" name="file">
+				</div>
+				<div class="form-group mt-5">
+					<input type="checkbox" name="box" class="check1 form-check mb-2">
+				    <input type="text" class="form-control access p-4" placeholder="Access Link Key">
+				</div>
+				<div class="form-group mt-4">
+					<input type="checkbox" name="box" class="check2 form-check mb-2">
+				    <input type="text" class="form-control encrypt p-4" placeholder="File Encription Key">
+				</div>
+				<div class="form-group mt-4">
+				    <input type="number" class="form-control p-4" placeholder="Number of hours">
+				</div>
+				<div class="mt-4 text-center">
+					<a href="" class="btn btn-success text-uppercase btn-lg pl-5 pr-5">Submit</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<script src="js/jquery.min.js"></script>
+
+	<script>
+		
+		$(document).ready(function(){
+
+			$('.form-group').hide();
+
+			$('.file input').on('change', function(){
+				$('.form-group').show(1500);
+			});
+
+			$('.access').on('click', function(){
+				$('.check1').prop('checked', true);
+			});
+
+			$('.encrypt').on('click', function(){
+				$('.check2').prop('checked', true);
+			});
+			
+		});
+
+	</script>
+	
+</body>
+</html>

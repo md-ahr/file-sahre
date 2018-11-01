@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Share Me | File</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css" media="screen">
+		#forkongithub {
+		    position: absolute;
+		    display: block;
+		    top: 0;
+		    right: 0;
+		    width: 200px;
+		    overflow: hidden;
+		    height: 200px;
+		    z-index: 0;
+		}
+		#forkongithub a {
+			width: 250px;
+		    background: #777;
+		    color: #fff;
+		    text-decoration: none;
+		    font-family: arial,sans-serif;
+		    text-align: center;
+		    font-weight: 700;
+		    padding: 5px 40px;
+		    font-size: 13px;
+		    line-height: 2rem;
+		    position: absolute;
+		    top: 65px;
+			right: -85px;
+			transform: rotate(-315deg);
+			 -webkit-transform: rotate(-315deg);
+			  -ms-transform: rotate(-315deg);
+			  -moz-transform: rotate(-315deg);
+			  -o-transform: rotate(-315deg);
+			box-sizing: content-box;
+		    transition: 0.5s ease;
+		}
+		#forkongithub a:before, #forkongithub a:after {
+		    content: "";
+		    width: 100%;
+		    display: block;
+		    position: absolute;
+		    top: 1px;
+		    right: 0;
+		    height: 1px;
+		    background: #fff;
+		}
+		#forkongithub a:hover {
+			background-color: #444;
+		}
+		.file {
+			margin-top: 200px;
+		}
+		.file .fileName {
+			font-size: 22px;
+		}
+	</style>
+</head>
+<body>
+
+	<span id="forkongithub">
+		<a href="https://github.com/cdnjs/cdnjs" target="_blank">RKshare on Github</a>
+	</span>
+
+	<div class="container file">
+		<div class="card w-75 m-auto bg-light p-4">
+			<h2 class="text-center">Get File</h2>
+			<p class="fileName text-center pt-2">image-name.jpg</p>
+			<div class="card-body">
+				<form action="">
+					<div class="form-group">
+						<input type="text" name="text" class="form-control" placeholder="Access Link Key">
+					</div>	
+					<div class="form-group">
+						<input type="text" name="text" class="form-control" placeholder="File Encrypt Key">
+					</div>	
+				</form>	
+			</div>
+			<div class="text-center">
+				<a href="" class="btn btn-secondary btn-lg">Download File</a>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery.min.js"></script>
+
+	<script>
+		
+		$(document).ready(function(){
+
+			
+			
+		});
+
+	</script>
+	
+</body>
+</html>

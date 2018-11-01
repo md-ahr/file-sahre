@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Share Me | Upload</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css" media="screen">
+		#forkongithub {
+		    position: absolute;
+		    display: block;
+		    top: 0;
+		    right: 0;
+		    width: 200px;
+		    overflow: hidden;
+		    height: 200px;
+		    z-index: 0;
+		}
+		#forkongithub a {
+			width: 250px;
+		    background: #777;
+		    color: #fff;
+		    text-decoration: none;
+		    font-family: arial,sans-serif;
+		    text-align: center;
+		    font-weight: 700;
+		    padding: 5px 40px;
+		    font-size: 13px;
+		    line-height: 2rem;
+		    position: absolute;
+		    top: 65px;
+			right: -85px;
+			transform: rotate(-315deg);
+			 -webkit-transform: rotate(-315deg);
+			  -ms-transform: rotate(-315deg);
+			  -moz-transform: rotate(-315deg);
+			  -o-transform: rotate(-315deg);
+			box-sizing: content-box;
+		    transition: 0.5s ease;
+		}
+		#forkongithub a:before, #forkongithub a:after {
+		    content: "";
+		    width: 100%;
+		    display: block;
+		    position: absolute;
+		    top: 1px;
+		    right: 0;
+		    height: 1px;
+		    background: #fff;
+		}
+		#forkongithub a:hover {
+			background-color: #444;
+		}
+		.upload {
+			margin-top: 200px;
+		}
+		.upload .para {
+			font-weight: 500;
+		}
+		.upload .para em {
+			font-weight: normal;
+		}
+		.upload .card form a input {
+			cursor: pointer;
+		}
+		#file_url {
+			width: 100%;
+			border: 1px solid #ddd;
+			padding: 10px 0px 10px 15px;
+		}
+	</style>
+</head>
+<body>
+
+	<span id="forkongithub">
+		<a href="https://github.com/cdnjs/cdnjs" target="_blank">RKshare on Github</a>
+	</span>
+
+	<div class="container upload">
+		<div class="card w-75 m-auto bg-light">
+			<div class="card-header">
+				<h5 class="text-center">File Uploaded Successfully</h5>
+			</div>
+			<div class="card-body p-5">
+				<form action="">
+					<div class="form-group row">
+						<div class="col-sm-9 pl-5">
+							<a href="getFile.html" target="_blank">
+								<button type="button" id="file_url" class="btn bg-white text-left">https://shareme.fahadahammed.com/file/image-name.jpg</button>
+							</a>
+						</div>		
+						<div class="col-sm-3">
+							<button type="button" id="copybtn" class="btn btn-info text-uppercase" onclick="copyToClipboard('#file_url')">
+								Copy <span class="fa fa-copy"></span>
+							</button>
+						</div>
+					</div>
+				</form>
+				<div class="para mt-5 pl-5">
+					<p> File Size: <em>56.4130859375 kilobytes</em> </p>
+					<p id="rem1" onclick="copyToClipboard('#access_pass')"> 
+						Access Link Key: 
+						<span id="copy1" class="fa fa-copy"></span> 
+						<em id="access_pass">asd</em> 
+					</p>
+					<p id="rem2" onclick="copyToClipboard('#access_key')"> 
+						File Encryption Key: 
+						<span id="copy2" class="fa fa-copy"></span> 
+						<em id="access_key">ddos9e4cdb8f711e5897be</em> 
+					</p>
+				</div>
+				<div class="text-center mt-5">
+					<a href="index.html" class="btn btn-secondary btn-lg">Upload Another File</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery.min.js"></script>
+
+	<script>
+
+		function copyToClipboard(element) {
+		    var $temp = $("<input>");
+		    $("body").append($temp);
+		    $temp.val($(element).text()).select();
+		    document.execCommand("copy");
+		    $temp.remove();
+		};
+
+		$("#copybtn").on('click', function(){
+		    $(this).text("COPIED !");
+		});
+
+		$("#rem1").on('click', function(){
+		    $("#copy1").remove();
+		});
+
+		$("#rem2").on('click', function(){
+		    $("#copy2").remove();
+		});
+
+	</script>
+	
+</body>
+</html>
